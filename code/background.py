@@ -22,3 +22,5 @@ class Background(pygame.sprite.Sprite):
         self.pos = (self.pos[0], self.pos[1] + self.speed)
         if self.pos[1] <= self.display.get_height():
             pygame.draw.circle(self.display, "white", self.pos, self.rad)
+        elif self.pos[1] > self.display.get_height():
+            self.kill()
